@@ -7,13 +7,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Notifications\AdminPasswordResetNotification;
 use App\Notifications\AdminResetPasswordNotification;
+use Spatie\Permission\Traits\HasRoles;
 
 class Admin extends Authenticatable
 {
-    use Notifiable; 
-
+    use Notifiable;
+    use HasRoles;
     protected $guard = 'admin';
-    
+
     protected $table = "admin_users";
     protected $fillable = ["name", "gender", "phone_number", "email", "password", "is_active"];
 
@@ -26,4 +27,3 @@ class Admin extends Authenticatable
     }
 
 }
- 

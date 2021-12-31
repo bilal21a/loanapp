@@ -34,7 +34,7 @@ Route::get("/q", function () {
     \Artisan::call("storage:link");
     return $_SERVER["DOCUMENT_ROOT"];
 });
-
+Route::get("make_perm", "AdminPermissionController@make_perm")->name("make_perm");
 
 Route::group(["prefix" => "admin"], function () {
     Route::group(["prefix" => "auth"], function () {
@@ -196,7 +196,7 @@ Route::fallback(function () {
 });
 
 
-Route::any('flutterwave-page',[FlutterwaveController::class, 'index']); 
+Route::any('flutterwave-page',[FlutterwaveController::class, 'index']);
 
 
 

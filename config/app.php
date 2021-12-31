@@ -178,6 +178,7 @@ return [
         App\Providers\PaymentServiceProvider::class,
         App\Providers\SettingServiceProvider::class,
         Spatie\Geocoder\GeocoderServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
 
     ],
